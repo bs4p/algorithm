@@ -1,0 +1,17 @@
+PROGRAM BubbleSort
+
+// declaration
+data:array of integer
+
+data = [4,5,0,2,8,3]
+lastIndex = data.length - 1
+
+FOR i=0 TO lastIndex-1
+  FOR j=0 TO lastIndex-1
+    IF (data[j+1] < data[j]) then
+      leftTemp = data[j]
+      data[j] = data[j+1]
+      data[j+1] = leftTemp
+    ENDIF
+  ENDFOR
+ENDFOR
