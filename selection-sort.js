@@ -1,14 +1,14 @@
 function selectionSort([...data]) {
   for (let i = 0; i < data.length - 1; i++) {
-    let iSmaller = i;
+    let iMin = i;
 
     for (let j = i + 1; j < data.length; j++) {
-      if (data[j] < data[iSmaller]) {
-        iSmaller = j;
+      if (data[j] < data[iMin]) {
+        iMin = j;
       }
     }
-    if (iSmaller != i) {
-      [data[i], data[iSmaller]] = [data[iSmaller], data[i]];
+    if (iMin != i) {
+      [data[i], data[iMin]] = [data[iMin], data[i]];
     }
   }
 
