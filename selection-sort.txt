@@ -1,0 +1,18 @@
+PROGRAM SelectionSort
+
+temp
+
+FOR i = 0 TO data.length-2 :
+  iMin = i
+  FOR j = i+1 TO data.length-1
+    IF data[j] < data[iMin]
+      iMin = j
+    ENDIF
+  ENDFOR
+
+  IF iMin != i
+    temp = data[i]
+    data[i] = data[iMin]
+    data[iMin] = data[i]
+  ENDIF
+ENDFOR
