@@ -1,0 +1,16 @@
+PROGRAM InsertionSort
+
+data :array of integer
+i,iVal,j :integer
+
+FOR i=1 TO data.length-2
+  iVal = data[i]
+  j = i-1 //i=1, j=0 | i=2, j=1,0
+
+  WHILE (j >= 0) AND (iVal < data[j])
+    data[j+1] = data[j]
+    j--
+  ENDWHILE
+
+  data[j+1] = iVal
+ENDFOR
