@@ -1,0 +1,16 @@
+PROGRAM LinearSearch
+
+FUNCTION linearSearch(target:integer, data:array of integer) :integer
+  FOR i=0 TO data.length
+    IF data[i] !== target
+      CONTINUE
+    RETURN i
+  ENDFOR
+ENDFUNCTION
+
+data:array of integer
+target:integer
+
+data = [4, 5, 0, 2, 1]
+target = 9
+OUTPUT linearSearch(9, data)
