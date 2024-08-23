@@ -1,0 +1,28 @@
+PROGRAM BinarySearch
+
+FUNCTION binarySearch(target:integer, sortedData:integer of array) : integer  
+  sdata = sortedData
+
+  low = 0
+  high = sortedData.length-1
+
+  WHILE(low <= high)
+    mid = Math.floor(high+low)/2
+    IF target == sdata[mid]
+      RETURN mid
+    ELSE IF target < sdata[mid]
+      high = mid-1
+    ELSE
+      low = mid+1
+    ENDIF
+  ENDWHILE
+  RETURN -1
+ENDFUNCTION
+
+sortedData:array of integer
+target:integer
+
+sortedData = [2, 4, 7, 9, 13, 15, 17, 20]
+              0  1  2  3  4   5   6   7
+target = 20
+OUTPUT binarySearch(0, sortedData)
