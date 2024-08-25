@@ -5,22 +5,23 @@ function jumpSearch(target, data) {
   // let data = [2, 9, 13, 15, 53, 54, 80, 82, 91, 101];
   let n = data.length;
 
-  let nextStep = Math.floor(Math.sqrt(n));
+  const step = Math.floor(Math.sqrt(n));
+  let nextStep = step;
   let prevStep = 0;
 
   console.log(`target : ${target}`);
-  while (target < data[nextStep]) {
+  while (data[nextStep] < target) {
     console.log(
-      `|1| prevStep: ${prevStep} | nextStep: ${nextStep} | data[${prevStep}]: ${data[prevStep]} | data[${nextStep}]: ${data[nextStep]}`
+      `prevStep: ${prevStep} | nextStep: ${nextStep} | data[${prevStep}]: ${data[prevStep]} | data[${nextStep}]: ${data[nextStep]}`
     );
 
     prevStep = nextStep;
-    nextStep += Math.floor(Math.sqrt(n));
+    nextStep += step;
 
     // console.log(
-    //   `|2| prevStep: ${prevStep} | nextStep: ${nextStep} | data[${prevStep}]: ${data[prevStep]} | data[${nextStep}]: ${data[nextStep]}`
+    //   `prevStep: ${prevStep} | nextStep: ${nextStep} | data[${prevStep}]: ${data[prevStep]} | data[${nextStep}]: ${data[nextStep]}`
     // );
-    console.log(`~~~\n`);
+    console.log(`~~~`);
   }
 
   console.log(`prevStep:${prevStep} , nextStep:${nextStep}`);
